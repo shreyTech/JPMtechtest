@@ -1,0 +1,14 @@
+This file contains import design considerations for this assignment:
+
+1. I have simple Java based objects to implement the requirement to keep the solution simple,
+   SalesMessageListener provides the entry point for processing message, the solution can be easily
+   be easily extended to using REST or JMS to provide industry standard processing capabilities.
+
+2. I have preferred template pattern to implement message processing logic as it can be easily extended,
+    (as in AdjustmentProcessor which extends sale processing to add adjustment logic) and can also be used
+    to model system wide requirements like creating a report after every 10 messages are processed.
+
+3. Junit and Mockito have been used for unit testing.
+
+4. As there is a requirement to keep the number of third party jars to minimum, I have used a ObjectFactory class
+   to create objects instead of a IOC framework like Spring.
